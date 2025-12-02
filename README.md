@@ -1,8 +1,8 @@
-# GitHub Copilot for Business & Systems Analysts - Hands-On Lab
+# GitHub Copilot for Requirements Analysts - Hands-On Lab
 
 ## Overview
 
-Welcome to the GitHub Copilot for Business & Systems Analysts training lab! This hands-on repository is designed to help Business Analysts, Systems Analysts, Product Owners, and QA/UAT leads learn how to leverage GitHub Copilot to transform raw inputs into well-formed requirements artifacts.
+Welcome to the GitHub Copilot for Requirements Analysts training lab! This hands-on repository is designed to help Business Analysts, Systems Analysts, Product Owners, and QA/UAT leads learn how to leverage GitHub Copilot to transform raw inputs into well-formed requirements artifacts.
 
 In this 75-minute session, you'll learn practical techniques for using AI-assisted tools to accelerate your requirements documentation work while maintaining quality, compliance, and traceability.
 
