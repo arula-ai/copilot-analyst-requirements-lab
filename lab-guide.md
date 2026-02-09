@@ -191,7 +191,14 @@ This lab offers two specialized tracks to match your primary responsibilities:
 
 **Can't decide?** Path A is more foundational and recommended for mixed roles.
 
+---
+
+# 📋 HANDS-ON EXERCISES BEGIN
+
 ## Detailed Path A Walkthrough
+
+> **📍 Path A: Backlog Management Track**  
+> Transform stakeholder notes → Epics → User Stories → Gherkin Scenarios → GitHub Issues
 
 ### Overview of 3 Exercises
 
@@ -820,7 +827,12 @@ Scenario: Customer attempts invalid threshold
 - Perfectionism in formatting - focus on content quality
 - Not using the provided prompt templates
 
+---
+
 ## Detailed Path B Walkthrough
+
+> **📍 Path B: Process & Data Track**  
+> Transform policy documents → Process Flows → Data Contracts → UAT Test Cases → Traceability Matrix
 
 ### Overview of 3 Exercises
 
