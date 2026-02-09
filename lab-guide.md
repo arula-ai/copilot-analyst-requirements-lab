@@ -221,6 +221,13 @@ Path A transforms messy stakeholder notes into production-ready requirements thr
 - [ ] Have `/path-a-backlog/prompts/01-epic-generation-prompts.md` open for reference
 - [ ] Have `/path-a-backlog/templates/invest-checklist.md` available
 
+**📝 Note on Prompt Options:**
+Throughout these exercises, you'll see two ways to provide content to Copilot:
+- **Option 1 (File Reference):** Uses `#file:path/to/file.md` to reference files directly. This is cleaner and lets Copilot pull the latest content automatically.
+- **Option 2 (Copy-Paste):** Traditional manual copy-paste. Use this if file references aren't working or you want to work with specific snippets.
+
+Choose whichever approach works best for you - both produce the same results!
+
 **Step 1: Generate Epics (4 minutes)**
 
 1. **Create your workspace:**
@@ -231,7 +238,32 @@ Path A transforms messy stakeholder notes into production-ready requirements thr
 
 2. **Open Copilot Chat** (`Ctrl+Shift+I` or `Cmd+Shift+I`)
 
-3. **Use this exact prompt pattern:**
+3. **Use this exact prompt pattern (choose Option 1 or Option 2):**
+
+   **Option 1: Using File Reference (Recommended)**
+   ```
+   You are a senior business analyst in a regulated financial services environment.
+
+   Review these stakeholder notes from our product discovery session:
+   #file:path-a-backlog/inputs/stakeholder-notes.md
+
+   Generate 2-3 epics that capture the high-level business capabilities.
+
+   For each epic, provide:
+   - Epic Title: [Concise, business-focused]
+   - Description: [2-3 sentences]
+   - Business Value: [Problem being solved + expected outcome]
+   - Key Assumptions: [2-3 assumptions that need validation]
+   - High-level story themes: [3-5 story areas]
+
+   Constraints:
+   - Each epic should represent 2-4 weeks of work
+   - Focus on customer-facing capabilities
+   - Flag any compliance requirements
+   - Identify dependencies on external systems
+   ```
+
+   **Option 2: Using Copy-Paste**
    ```
    You are a senior business analyst in a regulated financial services environment.
 
@@ -264,7 +296,30 @@ Path A transforms messy stakeholder notes into production-ready requirements thr
 
 2. **Choose your best epic** from Step 1
 
-3. **Use this prompt:**
+3. **Use this prompt (choose Option 1 or Option 2):**
+
+   **Option 1: Using File Reference (Recommended)**
+   ```
+   You are a business analyst. Review the epics I created:
+   #file:my-work/my-epics.md
+
+   Take the first epic and split it into 3-5 user stories following INVEST principles.
+
+   For each story, provide:
+   - User story in format: As a [role], I want [capability], so that [benefit]
+   - 2-3 acceptance criteria (brief, will detail later)
+   - Estimated complexity: Small/Medium/Large
+   - Priority: High/Medium/Low
+
+   Each story should be:
+   - Independent (can be developed separately)
+   - Valuable (delivers customer/business benefit)
+   - Estimable (team can size it)
+   - Small (completable in 1 sprint)
+   - Testable (clear success criteria)
+   ```
+
+   **Option 2: Using Copy-Paste**
    ```
    You are a business analyst. Take this epic and split it into 3-5 user stories following INVEST principles.
 
@@ -294,7 +349,19 @@ Path A transforms messy stakeholder notes into production-ready requirements thr
 
 3. **Score your story** against the 6 INVEST criteria
 
-4. **If score is 4 or below, use this fix prompt:**
+4. **If score is 4 or below, use this fix prompt (choose Option 1 or Option 2):**
+
+   **Option 1: Using File Reference (Recommended)**
+   ```
+   Review the user stories I created:
+   #file:my-work/my-stories.md
+
+   The first story needs improvement. It fails these INVEST criteria: [LIST FAILED CRITERIA]
+
+   Rewrite the story to address these gaps while maintaining the core business value.
+   ```
+
+   **Option 2: Using Copy-Paste**
    ```
    This user story needs improvement:
    [PASTE YOUR STORY]
@@ -376,7 +443,32 @@ Enable customers to configure and receive automated alerts when their account ba
 
 2. **Choose 2-3 of your best stories** from Exercise 1
 
-3. **For each story, use this prompt:**
+3. **For each story, use this prompt (choose Option 1 or Option 2):**
+
+   **Option 1: Using File Reference (Recommended)**
+   ```
+   You are a business analyst creating Gherkin scenarios for UAT testing.
+
+   Review the user stories I created:
+   #file:my-work/my-stories.md
+
+   Convert the first user story into 2-3 detailed Gherkin scenarios that cover the positive (happy path) cases.
+
+   Use this format:
+   
+   Scenario: [Descriptive scenario name]
+     Given [specific precondition with actual data]
+     When [specific user action]
+     Then [specific, measurable outcome]
+
+   Requirements:
+   - Use specific data values (dollar amounts, account numbers, dates)
+   - Make assertions measurable and verifiable
+   - Cover each acceptance criterion with at least one scenario
+   - Include system responses and user feedback
+   ```
+
+   **Option 2: Using Copy-Paste**
    ```
    You are a business analyst creating Gherkin scenarios for UAT testing.
 
@@ -385,12 +477,11 @@ Enable customers to configure and receive automated alerts when their account ba
    [PASTE ONE STORY WITH ITS ACCEPTANCE CRITERIA]
 
    Use this format:
-   ```gherkin
+   
    Scenario: [Descriptive scenario name]
      Given [specific precondition with actual data]
      When [specific user action]
      Then [specific, measurable outcome]
-   ```
 
    Requirements:
    - Use specific data values (dollar amounts, account numbers, dates)
@@ -416,7 +507,26 @@ Scenario: Customer sets valid alert threshold
 
 **Step 2: Generate Negative & Edge Cases (5 minutes)**
 
-1. **Use this prompt for each story:**
+1. **Use this prompt for each story (choose Option 1 or Option 2):**
+
+   **Option 1: Using File Reference (Recommended)**
+   ```
+   Review the user story from:
+   #file:my-work/my-stories.md
+
+   Create 2-3 negative and edge case scenarios for the first story.
+
+   Focus on:
+   - Invalid inputs (negative amounts, text in number fields)
+   - Boundary conditions (minimum/maximum values)
+   - System error conditions (service unavailable, timeout)
+   - Business rule violations (existing regulations, account restrictions)
+   - User error scenarios (navigation mistakes, double-clicks)
+
+   Each scenario should test what happens when things go wrong.
+   ```
+
+   **Option 2: Using Copy-Paste**
    ```
    Now create 2-3 negative and edge case scenarios for this same story:
 
@@ -446,7 +556,24 @@ Scenario: Customer attempts to set negative threshold
 
 **Step 3: Review for Completeness (3 minutes)**
 
-1. **Use this review prompt:**
+1. **Use this review prompt (choose Option 1 or Option 2):**
+
+   **Option 1: Using File Reference (Recommended)**
+   ```
+   Review the Gherkin scenarios I created for completeness:
+   #file:my-work/my-scenarios.md
+
+   Check for:
+   1. Are all acceptance criteria covered by at least one scenario?
+   2. Are scenarios specific enough to be executed by a tester?
+   3. Are expected outcomes measurable and verifiable?
+   4. Have we covered the most important negative cases?
+   5. Are there any obvious edge cases missing?
+
+   Suggest any additional scenarios needed or improvements to existing ones.
+   ```
+
+   **Option 2: Using Copy-Paste**
    ```
    Review these Gherkin scenarios for completeness:
 
@@ -487,7 +614,32 @@ Your scenarios should be:
 
 1. **Create new file:** `my-issues.md`
 
-2. **For each of your 2-3 best stories, use this prompt:**
+2. **For each of your 2-3 best stories, use this prompt (choose Option 1 or Option 2):**
+
+   **Option 1: Using File Reference (Recommended)**
+   ```
+   Convert my user story and Gherkin scenarios into a complete GitHub issue using our template format.
+
+   USER STORY:
+   #file:my-work/my-stories.md
+   (Use the first story)
+
+   GHERKIN SCENARIOS:
+   #file:my-work/my-scenarios.md
+   (Use the scenarios for the first story)
+
+   Create a GitHub issue that includes:
+   - Properly formatted title: [US-###] [Brief description]
+   - Complete issue body with all required sections
+   - All Gherkin scenarios in code blocks
+   - Definition of Ready checklist
+   - Source documentation references
+   - Suggested labels and project assignment
+
+   Use the format from #file:path-a-backlog/templates/github-issue-template.md
+   ```
+
+   **Option 2: Using Copy-Paste**
    ```
    Convert this user story and Gherkin scenarios into a complete GitHub issue using our template format:
 
@@ -510,7 +662,24 @@ Your scenarios should be:
 
 **Step 2: Add Traceability (4 minutes)**
 
-1. **For each issue, enhance with this prompt:**
+1. **For each issue, enhance with this prompt (choose Option 1 or Option 2):**
+
+   **Option 1: Using File Reference (Recommended)**
+   ```
+   Add traceability information to the GitHub issue I just created.
+
+   Review the context from:
+   #file:path-a-backlog/inputs/stakeholder-notes.md
+   #file:my-work/my-epics.md
+
+   Add these sections:
+   - **Source Documentation:** Reference the original stakeholder meeting notes
+   - **Related Requirements:** Link to epic and any policy requirements
+   - **Dependencies:** Technical and business dependencies identified
+   - **Risks:** Delivery risks and mitigation strategies
+   ```
+
+   **Option 2: Using Copy-Paste**
    ```
    Add traceability information to this GitHub issue:
 
@@ -527,7 +696,25 @@ Your scenarios should be:
 
 **Step 3: Self-Review & DoR Check (3 minutes)**
 
-1. **Use this final review prompt:**
+1. **Use this final review prompt (choose Option 1 or Option 2):**
+
+   **Option 1: Using File Reference (Recommended)**
+   ```
+   Review the GitHub issue I created for sprint readiness:
+   #file:my-work/my-issues.md
+
+   Check against our Definition of Ready:
+   1. Story follows proper format with clear business value
+   2. At least 2-3 testable acceptance criteria
+   3. Dependencies and risks identified
+   4. Source traceability documented
+   5. Estimation possible by development team
+   6. No blocking unknowns
+
+   Rate each criterion (Pass/Fail) and suggest specific improvements for any failures.
+   ```
+
+   **Option 2: Using Copy-Paste**
    ```
    Review this GitHub issue for sprint readiness:
 
